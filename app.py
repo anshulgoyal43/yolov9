@@ -11,6 +11,8 @@ CLIENT = InferenceHTTPClient(
     api_key="oblGd9IeJj8Hm0rKfO2v"
 )
 
+
+
 @app.route('/')
 def index():
     return '''
@@ -35,7 +37,8 @@ def upload():
         image = Image.open(file.stream)
 
         # Inference
-        result = CLIENT.infer(image, model_id="signature-detection-xxdzl/3")
+        # result = CLIENT.infer(image, model_id="signature-detection-xxdzl/3")
+        result = CLIENT.infer(image, model_id="signature-detection-vjjcz/10")
 
         # Draw the predictions on the image
         draw = ImageDraw.Draw(image)
